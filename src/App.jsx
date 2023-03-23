@@ -8,6 +8,7 @@ const App = () => {
 
   const [searchField, setSearchField] = useState("");
   const [monsters, setMonsters] = useState([]);
+  const [filterMonsters, setFilterMonsters] = useState(monsters);
 
   useEffect(() => {
     let ignore = false;
@@ -26,13 +27,17 @@ const App = () => {
     };
   }, [url]);
 
+  useEffect(() => {
+    const newFilterMonsters = monsters.filter((monsters) =>
+      monsters.name.toLowerCase().includes(searchField)
+    );
+    setFilterMonsters(newFilterMonsters);
+  }, [searchField, monsters]);
+
   const onSearchChange = (e) => {
     let searchField = e.target.value.toLowerCase();
     setSearchField(searchField);
   };
-  const filterMonsters = monsters.filter((monsters) =>
-    monsters.name.toLowerCase().includes(searchField)
-  );
 
   return (
     <div>
