@@ -1,8 +1,10 @@
+import { Category } from "./components/category-item";
+
 function App() {
   return (
-    <div className="text-blue-400 text-center">
-      <p>React Playground Projects</p>
-    </div>
+    <>
+      <Category />
+    </>
   );
 }
 
