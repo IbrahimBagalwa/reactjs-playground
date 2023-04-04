@@ -1,7 +1,16 @@
 import { About } from "./About";
 import { Home } from "./Home";
 import { Vans, DetailVans } from "./Vans";
-import { Dashboard, Income, Reviews, ListedVans, DetailVanHost } from "./Host";
+import {
+  Dashboard,
+  Income,
+  Reviews,
+  ListedVans,
+  DetailVanHost,
+  HostVanInfo,
+  HostVanPricing,
+  HostVanPhoto,
+} from "./Host";
 
 export {
   About,
@@ -13,4 +22,7 @@ export {
   Reviews,
   ListedVans,
   DetailVanHost,
+  HostVanInfo,
+  HostVanPricing,
+  HostVanPhoto,
 };

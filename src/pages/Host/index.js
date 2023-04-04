@@ -3,5 +3,16 @@ import DetailVanHost from "./DetailVanHost";
 import Income from "./Income";
 import ListedVans from "./ListedVans";
 import Reviews from "./Reviews";
-
-export { Dashboard, Income, Reviews, ListedVans, DetailVanHost };
+import HostVanInfo from "./HostVanInfo";
+import HostVanPhoto from "./HostVanPhoto";
+import HostVanPricing from "./HostVanPricing";
+export {
+  Dashboard,
+  Income,
+  Reviews,
+  ListedVans,
+  DetailVanHost,
+  HostVanInfo,
+  HostVanPricing,
+  HostVanPhoto,
+};

@@ -1,24 +1,6 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
-
-import { useParams } from "react-router-dom";
-
-const HostLayout = () => {
-  const activeLink = ({ isActive }) => (isActive ? "host-active-link" : "");
-  return (
-    <>
-      <nav className="host-nav">
-        <NavLink className={activeLink}>Details</NavLink>
-        <NavLink className={activeLink}>Princing</NavLink>
-        <NavLink className={activeLink} to="/host/vans">
-          Photos
-        </NavLink>
-      </nav>
-      <Outlet />
-    </>
-  );
-};
+import { Link, useParams, Outlet } from "react-router-dom";
+import { HostLayoutDetail } from "../../Components";
 
 const DetailVanHost = () => {
   const [hostVan, setHostListVans] = useState({});
@@ -33,7 +15,6 @@ const DetailVanHost = () => {
   }, []);
   return (
     <div>
-      {/* <Link to="/host/vans">Back to all vans</Link> */}
       <Link to=".." relative="path" className="back-button">
         &larr; <span>Back to all vans</span>
       </Link>
@@ -49,12 +30,8 @@ const DetailVanHost = () => {
               <h4>${hostVan.price}</h4>
             </div>
           </div>
-          <div>
-            <h4>Name:{hostVan.name}</h4>
-            <h4>Category:{hostVan.type}</h4>
-            <p>Descriotion:{hostVan.description} </p>
-            <h4>Visibility: Public</h4>
-          </div>
+          <HostLayoutDetail />
+          <Outlet context={[hostVan]} />
         </div>
       </section>
     </div>

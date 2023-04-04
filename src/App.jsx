@@ -1,10 +1,13 @@
-import { Layout, HostLayout } from "./Components";
+import { Layout, HostLayout, HostLayoutDetail } from "./Components";
 import {
   About,
   Dashboard,
   DetailVanHost,
   DetailVans,
   Home,
+  HostVanInfo,
+  HostVanPhoto,
+  HostVanPricing,
   Income,
   ListedVans,
   Reviews,
@@ -27,7 +30,11 @@ function App() {
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="vans" element={<ListedVans />} />
-            <Route path="vans/:id" element={<DetailVanHost />} />
+            <Route path="vans/:id" element={<DetailVanHost />}>
+              <Route index element={<HostVanInfo />} />
+              <Route path="pricing" element={<HostVanPricing />} />
+              <Route path="photos" element={<HostVanPhoto />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
