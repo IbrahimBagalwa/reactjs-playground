@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "../utils/mirage";
+import "../../utils/mirage";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const Vans = () => {

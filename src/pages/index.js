@@ -1,5 +1,5 @@
-import About from "./About";
-import Home from "./Home";
-import Vans from "./Vans";
-import DetailVans from "./DetailVans";
+import { About } from "./About";
+import { Home } from "./Home";
+import { Vans, DetailVans } from "./Vans";
+
 export { About, Home, Vans, DetailVans };
