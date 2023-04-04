@@ -2,9 +2,11 @@ import { Layout, HostLayout } from "./Components";
 import {
   About,
   Dashboard,
+  DetailVanHost,
   DetailVans,
   Home,
   Income,
+  ListedVans,
   Reviews,
   Vans,
 } from "./pages";
@@ -24,6 +26,8 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path="vans" element={<ListedVans />} />
+            <Route path="vans/:id" element={<DetailVanHost />} />
           </Route>
         </Route>
       </Routes>
