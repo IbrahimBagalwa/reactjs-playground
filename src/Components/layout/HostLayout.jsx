@@ -5,16 +5,16 @@ const HostLayout = () => {
   return (
     <>
       <nav className="host-nav">
-        <NavLink className={activeLink} end to="/host">
+        <NavLink className={activeLink} end to=".">
           Dashboard
         </NavLink>
-        <NavLink className={activeLink} to="/host/income">
+        <NavLink className={activeLink} to="income">
           Income
         </NavLink>
-        <NavLink className={activeLink} to="/host/vans">
+        <NavLink className={activeLink} to="vans">
           Vans
         </NavLink>
-        <NavLink className={activeLink} to="/host/reviews">
+        <NavLink className={activeLink} to="reviews">
           Reviews
         </NavLink>
       </nav>
