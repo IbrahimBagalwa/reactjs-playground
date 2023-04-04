@@ -19,6 +19,12 @@ body {
   scrollbar-width: none;
 }
 
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   height: 110px;
   display: flex;
@@ -26,7 +32,6 @@ header {
   padding-block: 10px;
   top: 0;
   position: sticky;
-  z-index: 10;
   background-color: #fff7ed;
 }
 
@@ -37,7 +42,11 @@ header .site-logo {
   font-weight: 900;
   font-size: 25px;
 }
-
+a.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
+}
 header a {
   text-decoration: none;
   color: #4d4d4d;
@@ -48,6 +57,22 @@ header a {
 header a:hover {
   color: #161616;
   text-decoration: underline;
+}
+
+main {
+  margin-bottom: 84px;
+}
+
+footer {
+  background-color: #161616;
+  color: #aaaaaa;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  font-weight: 500;
 }
 
 .link-button {
@@ -70,7 +95,7 @@ header a:hover {
 /*** HOME PAGE ***/
 .home-container {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
-    url("/public//images/image\ 53.png") no-repeat center center;
+    url("/images/image\ 53.png") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -283,4 +308,26 @@ i[class*="van-type-"] {
   background-color: #ff8c38;
   color: white;
   font-size: 1.125rem;
+}
+
+.host-nav {
+  display: flex;
+}
+
+.host-nav a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.host-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 600;
+}
+a.host-active-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
 }

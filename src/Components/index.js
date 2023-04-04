@@ -1,2 +1,2 @@
-import { Layout } from "./layout";
-export { Layout };
+import { Layout, HostLayout } from "./layout";
+export { Layout, HostLayout };

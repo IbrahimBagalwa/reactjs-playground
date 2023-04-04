@@ -1,4 +1,4 @@
-import bgImg from "../../public/images/image 54.png";
+import bgImg from "/images/image 54.png";
 import { Link } from "react-router-dom";
 const About = () => {
   return (

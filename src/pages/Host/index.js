@@ -1,5 +1,5 @@
 import Dashboard from "./Dashboard";
-import Incoming from "./Incoming";
+import Income from "./Income";
 import Reviews from "./Reviews";
 
-export { Dashboard, Incoming, Reviews };
+export { Dashboard, Income, Reviews };
