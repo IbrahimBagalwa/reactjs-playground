@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useLocation, Link, useParams } from "react-router-dom";
 
 const DetailVans = () => {
+  const location = useLocation();
   const { vanID } = useParams();
   const [van, setVan] = useState({});
   const fetchSingleVan = async () => {
@@ -15,6 +15,13 @@ const DetailVans = () => {
   }, []);
   return (
     <div className="van-detail-container">
+      <Link
+        to={location.state ? `..?${location.state.search}` : ".."}
+        relative="path"
+        className="back-button"
+      >
+        &larr; <span>Back to all vans</span>
+      </Link>
       {van ? (
         <div className="van-detail">
           <img src={van.imageUrl} />

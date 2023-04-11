@@ -20,7 +20,7 @@ const ListedVans = () => {
           hostListVans.map(({ id, imageUrl, name, price }) => {
             return (
               <section key={id}>
-                <Link className="host-van-link-wrapper" to={`/host/vans/${id}`}>
+                <Link className="host-van-link-wrapper" to={id}>
                   <div className="host-van-single">
                     <img src={imageUrl} alt={name} />
                     <div className="host-van-info">
