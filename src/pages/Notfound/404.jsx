@@ -1,0 +1,15 @@
+import { Link } from "react-router-dom";
+
+// plat or cach all routes
+const Notfound = () => {
+  return (
+    <div className="not-found-container">
+      <h2>Sorry, the page you were looking for was not found.</h2>
+      <Link to="." className="link-button">
+        Return to home
+      </Link>
+    </div>
+  );
+};
+
+export default Notfound;

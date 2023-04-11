@@ -1,4 +1,4 @@
-import { Layout, HostLayout, HostLayoutDetail } from "./Components";
+import { Layout, HostLayout } from "./Components";
 import {
   About,
   Dashboard,
@@ -10,6 +10,7 @@ import {
   HostVanPricing,
   Income,
   ListedVans,
+  Notfound,
   Reviews,
   Vans,
 } from "./pages";
@@ -36,6 +37,7 @@ function App() {
               <Route path="photos" element={<HostVanPhoto />} />
             </Route>
           </Route>
+          <Route path="*" element={<Notfound />} />
         </Route>
       </Routes>
     </div>

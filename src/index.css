@@ -467,3 +467,12 @@ i[class*="van-type-"] {
   text-decoration: underline;
   color: #161616;
 }
+.not-found-container {
+  padding-inline: 26px;
+}
+
+.not-found-container .link-button {
+  width: 100%;
+  background-color: #161616;
+  color: white;
+}

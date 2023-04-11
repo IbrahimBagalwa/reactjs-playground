@@ -11,7 +11,7 @@ import {
   HostVanPricing,
   HostVanPhoto,
 } from "./Host";
-
+import { Notfound } from "./Notfound";
 export {
   About,
   Home,
@@ -25,4 +25,5 @@ export {
   HostVanInfo,
   HostVanPricing,
   HostVanPhoto,
+  Notfound,
 };

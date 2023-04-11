@@ -3,18 +3,27 @@ import "../../utils/mirage";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
+import { fetchVans } from "../../utils/api";
 const Vans = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [vans, setVans] = useState([]);
-  const fetchVans = async () => {
-    const res = await fetch("/api/vans");
-    const vans = await res.json();
-    setVans(vans.vans);
-  };
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchVans();
+    async function getVans() {
+      setLoading(true);
+      try {
+        const data = await fetchVans();
+        setVans(data.vans);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getVans();
   }, []);
 
   const tyepeFilter = searchParams.get("type");
@@ -36,7 +45,12 @@ const Vans = () => {
       <i className={`van-type ${van.type} selected`}>{van.type}</i>
     </div>
   ));
-
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+  if (error) {
+    return <h1>The was an error: {error.message}</h1>;
+  }
   return (
     <div className="van-list-container">
       <h1>Explore our van options</h1>
