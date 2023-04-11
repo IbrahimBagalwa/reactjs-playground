@@ -41,29 +41,37 @@ const Vans = () => {
       <h1>Explore our van options</h1>
       <div className="van-list-filter-buttons">
         <button
-          className="van-type simple"
+          className={`van-type simple ${
+            tyepeFilter === "simple" && "selected"
+          }`}
           onClick={() => setSearchParams({ type: "simple" })}
         >
           Simple
         </button>
         <button
-          className="van-type luxury"
+          className={`van-type luxury ${
+            tyepeFilter === "luxury" && "selected"
+          }`}
           onClick={() => setSearchParams({ type: "luxury" })}
         >
           Luxury
         </button>
         <button
-          className="van-type rugged"
+          className={`van-type rugged ${
+            tyepeFilter === "rugged" && "selected"
+          }`}
           onClick={() => setSearchParams({ type: "rugged" })}
         >
           Rugged
         </button>
-        <button
-          className="van-type clear-filters"
-          onClick={() => setSearchParams({})}
-        >
-          Clear-filters
-        </button>
+        {tyepeFilter && (
+          <button
+            className="van-type clear-filters"
+            onClick={() => setSearchParams({})}
+          >
+            Clear-filters
+          </button>
+        )}
       </div>
       <div className="van-list">{vanElements}</div>
     </div>
