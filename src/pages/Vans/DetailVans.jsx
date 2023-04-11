@@ -13,6 +13,7 @@ const DetailVans = () => {
   useEffect(() => {
     fetchSingleVan();
   }, []);
+  const typeVansPath = location.state?.search.split("=")[1] || "all";
   return (
     <div className="van-detail-container">
       <Link
@@ -20,7 +21,7 @@ const DetailVans = () => {
         relative="path"
         className="back-button"
       >
-        &larr; <span>Back to all vans</span>
+        &larr; <span>{`Back to ${typeVansPath} vans`}</span>
       </Link>
       {van ? (
         <div className="van-detail">
