@@ -1,5 +1,6 @@
 import { Button } from "../ui";
 import "./cart-dropdown.scss";
+
 const CartDropdown = () => {
   return (
     <div className="cart-dropdown-container">
