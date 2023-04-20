@@ -3,27 +3,32 @@ import "./checkout-item.scss";
 import { CartContext } from "../../../context/cart-context";
 
 const CheckoutItem = ({ cartItems }) => {
-  const { id, imageUrl, name, quantity, price } = cartItems;
-  const { removeItemToCart, decreaseQuantity, increaseQuantity } =
+  const { imageUrl, name, quantity, price } = cartItems;
+  const { addItemToCart, removeItemFromCart, clearItemFromCart } =
     useContext(CartContext);
+  const clearItemHandler = () => clearItemFromCart(cartItems);
+  const removeItemeHandler = () => removeItemFromCart(cartItems);
+  const addItemHandler = () => addItemToCart(cartItems);
   return (
     <div className="checkout-item-container">
-      <img src={imageUrl} alt={`${name}`} className="image-container" />
+      <div className="image-container">
+        <img src={imageUrl} alt={`${name}`} />
+      </div>
 
       <span className="name">{name}</span>
       <div className="quantity">
-        <span className="arrow" onClick={() => decreaseQuantity(id)}>
+        <div className="arrow" onClick={removeItemeHandler}>
           &#10094;
-        </span>
+        </div>
         <span className="value">{quantity}</span>
-        <span className="arrow" onClick={() => increaseQuantity(id)}>
+        <div className="arrow" onClick={addItemHandler}>
           &#10095;
-        </span>
+        </div>
       </div>
       <span className="price">{price}</span>
-      <span className="remove-button" onClick={() => removeItemToCart(id)}>
-        &#10006;
-      </span>
+      <div className="remove-button" onClick={clearItemHandler}>
+        &#10005;
+      </div>
     </div>
   );
 };
