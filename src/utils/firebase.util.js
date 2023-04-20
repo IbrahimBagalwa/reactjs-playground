@@ -8,7 +8,14 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getDoc, setDoc, doc, getFirestore } from "firebase/firestore";
+import {
+  getDoc,
+  setDoc,
+  doc,
+  getFirestore,
+  collection,
+  writeBatch,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC4_ZJKlVBTr1tLZSrooV57gpWKUvivM6s",
@@ -32,6 +39,19 @@ export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googlePprovider);
 
 export const db = getFirestore();
+
+export const addCollectionAndDocument = async (collectionKey, objectsToAdd) => {
+  const collectionRef = collection(db, collectionKey);
+  const batch = writeBatch(db);
+
+  objectsToAdd.forEach((object) => {
+    const docRef = doc(collectionRef, object.title.toLowerCase());
+    batch.set(docRef, object);
+  });
+
+  await batch.commit();
+  console.log("Done");
+};
 
 export const createUserDocumentFromAuth = async (
   userAuth,
@@ -57,14 +77,17 @@ export const createUserDocumentFromAuth = async (
   }
   return userDocRef;
 };
+
 export const createUserAuthWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   return await createUserWithEmailAndPassword(auth, email, password);
 };
+
 export const loginUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
 export const signOutUser = async () => await signOut(auth);
 export const onAuthStateChangeListern = (callback) =>
   onAuthStateChanged(auth, callback);

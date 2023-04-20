@@ -5,7 +5,6 @@ import Navigation from "./router/navigation/Navigation";
 import Shop from "./router/shop/Shop";
 import Checkout from "./components/checkout/Checkout";
 const App = () => {
-  console.log("App");
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
