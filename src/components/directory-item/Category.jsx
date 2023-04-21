@@ -1,12 +1,12 @@
 import { categories } from "../../mocks/data";
-import CategoryItem from "./CategoryItem";
-import "./categories.styles.scss";
+import DirectoryItem from "./DirectoryItem";
+import "./directory-item.scss";
 
 const Category = () => {
   return (
     <div className="categories-container">
       {categories.map((category) => (
-        <CategoryItem {...category} key={category.id} />
+        <DirectoryItem {...category} key={category.id} />
       ))}
     </div>
   );
