@@ -1,9 +1,8 @@
-import { useEffect, createContext } from "react";
+import { useEffect, createContext, useReducer } from "react";
 import {
   createUserDocumentFromAuth,
   onAuthStateChangeListern,
 } from "../utils/firebase.util";
-import { useReducer } from "react";
 
 // actual value you want to access
 export const UserContext = createContext({

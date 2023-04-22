@@ -1,11 +1,39 @@
-import { useState, createContext, useEffect } from "react";
+import { useReducer, createContext, useEffect } from "react";
 import { getCategoriesAndDocuments } from "../utils/firebase.util.js";
 
 export const CategoriesContext = createContext({
   categoriesMap: {},
 });
+
+export const CATEGORIES_ACTION_TYPES = {
+  SET_CATEGORIES_MAP: "SET_CATEGORIES_MAP",
+};
+
+const categoriesReducer = (state, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case CATEGORIES_ACTION_TYPES.SET_CATEGORIES_MAP:
+      return { ...state, categoriesMap: payload };
+    default:
+      throw new Error(`unhandled action type ${type} in categoriesReducer`);
+  }
+};
+
+const DEFAULT_STATE = {
+  categoriesMap: {},
+};
 const CategoriesContextProvider = ({ children }) => {
-  const [categoriesMap, setCategoriesMap] = useState({});
+  const [{ categoriesMap }, dispatch] = useReducer(
+    categoriesReducer,
+    DEFAULT_STATE
+  );
+
+  const setCategoriesMap = (categories) => {
+    dispatch({
+      type: CATEGORIES_ACTION_TYPES.SET_CATEGORIES_MAP,
+      payload: categories,
+    });
+  };
 
   useEffect(() => {
     const getCategoriesMap = async () => {
