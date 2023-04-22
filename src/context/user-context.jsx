@@ -1,8 +1,9 @@
-import { useEffect, useState, createContext } from "react";
+import { useEffect, createContext } from "react";
 import {
   createUserDocumentFromAuth,
   onAuthStateChangeListern,
 } from "../utils/firebase.util";
+import { useReducer } from "react";
 
 // actual value you want to access
 export const UserContext = createContext({
@@ -10,9 +11,30 @@ export const UserContext = createContext({
   setCurrentUser: () => null,
 });
 
+export const USER_ACTION_TYPES = {
+  SET_CURRENT_USER: "SET_CURRENT_USER",
+};
+
+const userReducer = (state, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case USER_ACTION_TYPES.SET_CURRENT_USER:
+      return { ...state, currentUser: payload };
+    default:
+      throw new Error(`unhandled type ${type} in userReducer`);
+  }
+};
+const DEFAULT_STATE = {
+  currentUser: null,
+};
 // value hold the actual user
 const UserProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [state, dispatch] = useReducer(userReducer, DEFAULT_STATE);
+  const { currentUser } = state;
+  const setCurrentUser = (user) => {
+    dispatch({ type: USER_ACTION_TYPES.SET_CURRENT_USER, payload: user });
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChangeListern((user) => {
       if (user) {
@@ -22,6 +44,7 @@ const UserProvider = ({ children }) => {
     });
     return unsubscribe;
   }, []);
+
   let value = { currentUser, setCurrentUser };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
