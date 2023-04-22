@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import CartItem from "../cart-item/cartItem";
 import { Button } from "../ui";
 import {
   CartDropDownContainer,
