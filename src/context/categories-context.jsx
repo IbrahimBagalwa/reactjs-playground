@@ -1,5 +1,6 @@
 import { useReducer, createContext, useEffect } from "react";
 import { getCategoriesAndDocuments } from "../utils/firebase.util.js";
+import { createAction } from "../utils/reducer/reducer.utils.js";
 
 export const CategoriesContext = createContext({
   categoriesMap: {},
@@ -29,10 +30,9 @@ const CategoriesContextProvider = ({ children }) => {
   );
 
   const setCategoriesMap = (categories) => {
-    dispatch({
-      type: CATEGORIES_ACTION_TYPES.SET_CATEGORIES_MAP,
-      payload: categories,
-    });
+    dispatch(
+      createAction(CATEGORIES_ACTION_TYPES.SET_CATEGORIES_MAP, categories)
+    );
   };
 
   useEffect(() => {
