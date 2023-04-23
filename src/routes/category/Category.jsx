@@ -7,13 +7,13 @@ import { selectCategoriesMap } from "../../redux/store/categories/categories.sel
 
 const Category = () => {
   const { category } = useParams();
-  const categoriesMap = useSelector(selectCategoriesMap);
+  const categoriesArray = useSelector(selectCategoriesMap);
 
   return (
     <Fragment>
       <h2 className="category-title">{category.toUpperCase()}</h2>
       <div className="category-container">
-        {categoriesMap[category]?.map((product) => (
+        {categoriesArray[category]?.map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}
       </div>
