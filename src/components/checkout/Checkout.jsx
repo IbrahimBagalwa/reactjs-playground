@@ -8,7 +8,6 @@ import {
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const totalPrice = useSelector(selectCartTotal);
-  console.log("Checkout");
   return (
     <div className="checkout-container">
       <div className="checkout-header">

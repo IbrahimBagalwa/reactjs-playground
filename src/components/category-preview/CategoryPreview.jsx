@@ -3,7 +3,6 @@ import ProductCard from "../product-card/Product";
 import { Link } from "react-router-dom";
 
 const CategoryPreview = ({ title, products }) => {
-  console.log("Category preview");
   return (
     <div className="category-preview-container">
       <h2>

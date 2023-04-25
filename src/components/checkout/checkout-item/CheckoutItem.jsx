@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import "./checkout-item.scss";
-import { CartContext } from "../../../context/cart-context";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addItemToCart,
@@ -20,7 +18,6 @@ const CheckoutItem = ({ cartItems }) => {
   const addItemHandler = () =>
     dispatch(addItemToCart(cartItemsSelctor, cartItems));
 
-  console.log("Check out Item");
   return (
     <div className="checkout-item-container">
       <div className="image-container">

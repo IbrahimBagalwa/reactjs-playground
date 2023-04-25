@@ -19,7 +19,6 @@ const CartIcon = () => {
   const handleOpenCart = () => {
     dispatch(setIsCartOpen(!isCartOpen));
   };
-  console.log("Cart Icon selected");
   return (
     <CartIconContainer onClick={handleOpenCart}>
       <ShoppingIcon />
