@@ -14,6 +14,7 @@ specifiers:
   redux: ^4.2.1
   redux-logger: ^3.0.6
   redux-persist: ^6.0.0
+  redux-thunk: ^2.4.2
   reselect: ^4.1.8
   sass: ^1.60.0
   styled-components: ^5.3.9
@@ -30,6 +31,7 @@ dependencies:
   redux: 4.2.1
   redux-logger: 3.0.6
   redux-persist: 6.0.0_react@18.2.0+redux@4.2.1
+  redux-thunk: 2.4.2_redux@4.2.1
   reselect: 4.1.8
   sass: 1.60.0
   styled-components: 5.3.9_biqbaboplfbrettd7655fr4n2y
@@ -2131,6 +2133,14 @@ packages:
         optional: true
     dependencies:
       react: 18.2.0
+      redux: 4.2.1
+    dev: false
+
+  /redux-thunk/2.4.2_redux@4.2.1:
+    resolution: {integrity: sha512-+P3TjtnP0k/FEjcBL5FZpoovtvrTNT/UXd4/sluaSyrURlSlhLSzEdfsTBW7WsKB6yPvgd7q/iZPICFjW4o57Q==}
+    peerDependencies:
+      redux: ^4
+    dependencies:
       redux: 4.2.1
     dev: false
 
