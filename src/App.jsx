@@ -4,16 +4,17 @@ import Home from "./routes/home/Home";
 import Navigation from "./routes/navigation/Navigation";
 import Shop from "./routes/shop/Shop";
 import Checkout from "./components/checkout/Checkout";
-import { getCurrentUser } from "./utils/firebase.util";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setCurrentUser } from "./redux/store/user/user.action";
+import { checkUserSession } from "./redux/store/user/user.action";
+import { getCurrentUser } from "./utils/firebase.util";
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getCurrentUser().then((user) => console.log(user));
+    getCurrentUser().then((user) => console.log("GetCurrentUser: ", user));
+    // dispatch(checkUserSession());
   }, []);
 
   return (

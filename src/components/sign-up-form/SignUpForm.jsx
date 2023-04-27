@@ -39,7 +39,6 @@ const SignUpForm = () => {
       }
     }
   };
-  console.log("Sign up");
   return (
     <div className="sign-up-container">
       <h2>You don't have an account?</h2>
