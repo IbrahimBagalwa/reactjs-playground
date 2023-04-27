@@ -3,6 +3,7 @@ import { USER_ACTION_TYPES } from "./user.types";
 import {
   getCurrentUser,
   createUserDocumentFromAuth,
+  signInWithGooglePopup,
 } from "../../../utils/firebase.util";
 import { signInFailed, signInSuccess } from "./user.action";
 
@@ -14,6 +15,14 @@ export function* getSnapshotFromUserAuth(userAuth, additionalDetails) {
       additionalDetails
     );
     yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
+  } catch (error) {
+    yield put(signInFailed(error));
+  }
+}
+export function* signWithGoogle() {
+  try {
+    const { user } = yield call(signInWithGooglePopup);
+    yield call(getSnapshotFromUserAuth, user);
   } catch (error) {
     yield put(signInFailed(error));
   }
@@ -31,7 +40,9 @@ export function* isUserAuthenticated() {
 export function* onCheckUserSession() {
   yield takeLatest(USER_ACTION_TYPES.CHECK_USER_SESSION, isUserAuthenticated);
 }
-
+export function* onGoogleSignStart() {
+  yield takeLatest(USER_ACTION_TYPES.GOOGLE_SIGN_IN_START, signWithGoogle);
+}
 export function* userSagas() {
-  yield all([call(onCheckUserSession)]);
+  yield all([call(onCheckUserSession), call(onGoogleSignStart)]);
 }

@@ -7,14 +7,12 @@ import Checkout from "./components/checkout/Checkout";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { checkUserSession } from "./redux/store/user/user.action";
-import { getCurrentUser } from "./utils/firebase.util";
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getCurrentUser().then((user) => console.log("GetCurrentUser: ", user));
-    // dispatch(checkUserSession());
+    dispatch(checkUserSession());
   }, []);
 
   return (

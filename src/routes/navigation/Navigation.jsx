@@ -17,6 +17,7 @@ import { selectCartIsOpen } from "../../redux/store/cart/cart.selector";
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectCartIsOpen);
+
   return (
     <Fragment>
       <NavigationContainer>
