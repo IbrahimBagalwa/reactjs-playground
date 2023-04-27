@@ -27,6 +27,14 @@ export function* signWithGoogle() {
     yield put(signInFailed(error));
   }
 }
+export function* signWithEmail({ payload: { email, password } }) {
+  try {
+    const { user } = yield call(loginUserWithEmailAndPassword, email, password);
+    yield call(getSnapshotFromUserAuth, user);
+  } catch (error) {
+    yield put(signInFailed(error));
+  }
+}
 
 export function* isUserAuthenticated() {
   try {
@@ -43,6 +51,13 @@ export function* onCheckUserSession() {
 export function* onGoogleSignStart() {
   yield takeLatest(USER_ACTION_TYPES.GOOGLE_SIGN_IN_START, signWithGoogle);
 }
+export function* onEmailSignStart() {
+  yield takeLatest(USER_ACTION_TYPES.EMAIL_SIGN_IN_START, signWithEmail);
+}
 export function* userSagas() {
-  yield all([call(onCheckUserSession), call(onGoogleSignStart)]);
+  yield all([
+    call(onCheckUserSession),
+    call(onGoogleSignStart),
+    call(onEmailSignStart),
+  ]);
 }
