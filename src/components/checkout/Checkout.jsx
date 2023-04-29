@@ -1,37 +1,42 @@
-import "./checkout.scss";
 import CheckoutItem from "./checkout-item/CheckoutItem";
 import { useSelector } from "react-redux";
 import {
   selectCartItems,
   selectCartTotal,
 } from "../../redux/store/cart/cart.selector";
+import {
+  BlockHeader,
+  CheckoutContainer,
+  CheckoutHeader,
+  Total,
+} from "./checkout.style";
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const totalPrice = useSelector(selectCartTotal);
   return (
-    <div className="checkout-container">
-      <div className="checkout-header">
-        <div className="header-block">
+    <CheckoutContainer>
+      <CheckoutHeader>
+        <BlockHeader>
           <span>Product</span>
-        </div>
-        <div className="header-block">
+        </BlockHeader>
+        <BlockHeader>
           <span>Description</span>
-        </div>
-        <div className="header-block">
+        </BlockHeader>
+        <BlockHeader>
           <span>Quantity</span>
-        </div>
-        <div className="header-block">
+        </BlockHeader>
+        <BlockHeader>
           <span>Price</span>
-        </div>
-        <div className="header-block">
+        </BlockHeader>
+        <BlockHeader>
           <span>Remove</span>
-        </div>
-      </div>
+        </BlockHeader>
+      </CheckoutHeader>
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItems={cartItem} />
       ))}
-      <div className="total">Total: ${totalPrice}</div>
-    </div>
+      <Total>Total: ${totalPrice}</Total>
+    </CheckoutContainer>
   );
 };
 
