@@ -1,4 +1,3 @@
-import "./checkout-item.scss";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addItemToCart,
@@ -6,6 +5,15 @@ import {
   removeItemFromCart,
 } from "../../../redux/store/cart/cart.action";
 import { selectCartItems } from "../../../redux/store/cart/cart.selector";
+import {
+  Arrow,
+  BaseSpan,
+  CheckoutItemContainer,
+  ImageContainer,
+  Quantity,
+  RemoveButton,
+  Value,
+} from "./checkout-item.style";
 
 const CheckoutItem = ({ cartItems }) => {
   const { imageUrl, name, quantity, price } = cartItems;
@@ -19,26 +27,20 @@ const CheckoutItem = ({ cartItems }) => {
     dispatch(addItemToCart(cartItemsSelctor, cartItems));
 
   return (
-    <div className="checkout-item-container">
-      <div className="image-container">
+    <CheckoutItemContainer>
+      <ImageContainer>
         <img src={imageUrl} alt={`${name}`} />
-      </div>
+      </ImageContainer>
 
-      <span className="name">{name}</span>
-      <div className="quantity">
-        <div className="arrow" onClick={removeItemeHandler}>
-          &#10094;
-        </div>
-        <span className="value">{quantity}</span>
-        <div className="arrow" onClick={addItemHandler}>
-          &#10095;
-        </div>
-      </div>
-      <span className="price">{price}</span>
-      <div className="remove-button" onClick={clearItemHandler}>
-        &#10005;
-      </div>
-    </div>
+      <BaseSpan>{name}</BaseSpan>
+      <Quantity>
+        <Arrow onClick={removeItemeHandler}>&#10094;</Arrow>
+        <Value>{quantity}</Value>
+        <Arrow onClick={addItemHandler}>&#10095;</Arrow>
+      </Quantity>
+      <Arrow>{price}</Arrow>
+      <RemoveButton onClick={clearItemHandler}>&#10005;</RemoveButton>
+    </CheckoutItemContainer>
   );
 };
 
