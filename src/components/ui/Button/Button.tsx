@@ -10,6 +10,12 @@ export const BUTTON_TYPE_CLASSES = {
   google: "google-sign-in",
   inverted: "inverted",
 };
+type ButtonProps = {
+  buttonTypes?: string;
+  isLoading?: boolean;
+  buttonOptions: object;
+  children: JSX.Element;
+};
 const getButtonType = (buttonType = BUTTON_TYPE_CLASSES.base) =>
   ({
     [BUTTON_TYPE_CLASSES.base]: BaseButton,
@@ -17,7 +23,12 @@ const getButtonType = (buttonType = BUTTON_TYPE_CLASSES.base) =>
     [BUTTON_TYPE_CLASSES.inverted]: InvertedButton,
   }[buttonType]);
 
-const Button = ({ children, buttonTypes, isLoading, ...buttonOptions }) => {
+const Button = ({
+  children,
+  buttonTypes,
+  isLoading,
+  ...buttonOptions
+}: ButtonProps) => {
   const CustomButton = getButtonType(buttonTypes);
   return (
     <CustomButton disabled={isLoading} {...buttonOptions}>
