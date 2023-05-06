@@ -10,6 +10,7 @@ specifiers:
   dotenv: ^16.0.3
   firebase: ^9.18.0
   postcss: ^8.4.21
+  qs: ^6.11.1
   react: ^18.2.0
   react-dom: ^18.2.0
   react-redux: ^8.0.5
@@ -32,6 +33,7 @@ dependencies:
   '@stripe/stripe-js': 1.52.1
   dotenv: 16.0.3
   firebase: 9.18.0
+  qs: 6.11.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-redux: 8.0.5_ctrls2ti7t7iutxbwkm5ipogyy
