@@ -6,6 +6,7 @@ import {
   signInWithGooglePopup,
   createUserAuthWithEmailAndPassword,
   loginUserWithEmailAndPassword,
+  signOutUser,
 } from "../../../utils/firebase.util";
 import {
   signInFailed,
