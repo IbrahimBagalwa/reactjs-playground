@@ -1,4 +1,3 @@
-import { getCategoriesAndDocuments } from "../../../utils/firebase.util";
 import {
   createAction,
   Action,
@@ -35,13 +34,3 @@ export const fetchCategoriesFailed = withMatcher(
   (err: Error): FetchCategoriesFailed =>
     createAction(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_FAILED, err)
 );
-
-// export const fetchCategoriesAsync = () => async (dispatch) => {
-//   dispatch(fetchCategoriesStart());
-//   try {
-//     const categoriesAr = await getCategoriesAndDocuments();
-//     dispatch(fetchCategoriesSuccess(categoriesAr));
-//   } catch (error) {
-//     dispatch(fetchCategoriesFailed(error));
-//   }
-// };
