@@ -16,7 +16,7 @@ type ButtonProps = {
   buttonOptions: object;
   children: JSX.Element;
 };
-const getButtonType = (buttonType = BUTTON_TYPE_CLASSES.base) =>
+const getButtonType = (buttonType = BUTTON_TYPE_CLASSES.base): void =>
   ({
     [BUTTON_TYPE_CLASSES.base]: BaseButton,
     [BUTTON_TYPE_CLASSES.google]: GoogleSignedInButton,
