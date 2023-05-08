@@ -3,8 +3,10 @@ lockfileVersion: 5.4
 specifiers:
   '@stripe/react-stripe-js': ^2.1.0
   '@stripe/stripe-js': ^1.52.1
+  '@types/node': ^20.1.0
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
+  '@types/redux-logger': ^3.0.9
   '@vitejs/plugin-react': ^3.1.0
   autoprefixer: ^10.4.14
   dotenv: ^16.0.3
@@ -50,13 +52,15 @@ dependencies:
   vite-plugin-svgr: 2.4.0_vite@4.2.1
 
 devDependencies:
+  '@types/node': 20.1.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
+  '@types/redux-logger': 3.0.9
   '@vitejs/plugin-react': 3.1.0_vite@4.2.1
   autoprefixer: 10.4.14_postcss@8.4.21
   postcss: 8.4.21
   tailwindcss: 3.2.7_postcss@8.4.21
-  vite: 4.2.1_sass@1.60.0
+  vite: 4.2.1_oskv4kzjzwclwfuh5jxhodsnfe
 
 packages:
 
@@ -245,7 +249,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
-    dev: false
 
   /@babel/template/7.20.7:
     resolution: {integrity: sha512-8SegXApWe6VoNw0r9JHpSteLKTpTiLZ4rMlGIm9JQ18KiCtyQiAMEazujAHrUS5flrcqYZa75ukev3P6QmUwUw==}
@@ -946,7 +949,7 @@ packages:
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
       '@grpc/proto-loader': 0.7.6
-      '@types/node': 18.15.9
+      '@types/node': 20.1.0
     dev: false
 
   /@grpc/proto-loader/0.6.13:
@@ -1283,9 +1286,8 @@ packages:
     resolution: {integrity: sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA==}
     dev: false
 
-  /@types/node/18.15.9:
-    resolution: {integrity: sha512-dUxhiNzBLr6IqlZXz6e/rN2YQXlFgOei/Dxy+e3cyXTJ4txSUbGT2/fmnD6zd/75jDMeW5bDee+YXxlFKHoV0A==}
-    dev: false
+  /@types/node/20.1.0:
+    resolution: {integrity: sha512-O+z53uwx64xY7D6roOi4+jApDGFg0qn6WHcxe5QeqjMaTezBO/mxdfFXIVAVVyNWKx84OmPB3L8kbVYOTeN34A==}
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -1306,6 +1308,12 @@ packages:
       '@types/scheduler': 0.16.3
       csstype: 3.1.1
 
+  /@types/redux-logger/3.0.9:
+    resolution: {integrity: sha512-cwYhVbYNgH01aepeMwhd0ABX6fhVB2rcQ9m80u8Fl50ZODhsZ8RhQArnLTkE7/Zrfq4Sz/taNoF7DQy9pCZSKg==}
+    dependencies:
+      redux: 4.2.1
+    dev: true
+
   /@types/scheduler/0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
 
@@ -1324,7 +1332,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.21.3
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.2.1_sass@1.60.0
+      vite: 4.2.1_oskv4kzjzwclwfuh5jxhodsnfe
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2095,7 +2103,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.2
-      '@types/node': 18.15.9
+      '@types/node': 20.1.0
       long: 4.0.0
     dev: false
 
@@ -2114,7 +2122,7 @@ packages:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 18.15.9
+      '@types/node': 20.1.0
       long: 5.2.1
     dev: false
 
@@ -2270,11 +2278,9 @@ packages:
     resolution: {integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==}
     dependencies:
       '@babel/runtime': 7.21.0
-    dev: false
 
   /regenerator-runtime/0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
-    dev: false
 
   /require-directory/2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -2375,7 +2381,7 @@ packages:
     resolution: {integrity: sha512-QjZRzKi3wf8TsuJf/fd6/ejfPgwNptDIzFogRWaRzP3oMJnSD73I2YxR0Eje5zfrU8FmddYWZYawoUejqN+o1w==}
     engines: {node: '>=12.*'}
     dependencies:
-      '@types/node': 18.15.9
+      '@types/node': 20.1.0
       qs: 6.11.1
     dev: false
 
@@ -2518,13 +2524,13 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.0.2
       '@svgr/core': 6.5.1
-      vite: 4.2.1_sass@1.60.0
+      vite: 4.2.1_oskv4kzjzwclwfuh5jxhodsnfe
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: false
 
-  /vite/4.2.1_sass@1.60.0:
+  /vite/4.2.1_oskv4kzjzwclwfuh5jxhodsnfe:
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -2549,6 +2555,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.1.0
       esbuild: 0.17.12
       postcss: 8.4.21
       resolve: 1.22.1
