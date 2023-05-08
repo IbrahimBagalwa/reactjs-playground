@@ -1,4 +1,4 @@
-import { takeLatest, call, all, put } from "redux-saga/effects";
+import { takeLatest, call, all, put } from "typed-redux-saga";
 import { CATEGORIES_ACTION_TYPES } from "./categories.types";
 import {
   fetchCategoriesFailed,
@@ -8,17 +8,16 @@ import { getCategoriesAndDocuments } from "../../../utils/firebase.util";
 
 export function* fetchCategoriesAsync() {
   try {
-    const categoriesAr = yield call(getCategoriesAndDocuments, "categories");
+    const categoriesAr = yield* call(getCategoriesAndDocuments);
     //anytime you have a function and you want to turn as a side effect you essentialy want the keywords call
-    yield put(fetchCategoriesSuccess(categoriesAr));
+    yield* put(fetchCategoriesSuccess(categoriesAr));
     // put is our dispatch
   } catch (error) {
-    yield put(fetchCategoriesFailed);
-    dispatch(fetchCategoriesFailed(error));
+    yield* put(fetchCategoriesFailed(error as Error));
   }
 }
 export function* onFetchCategories() {
-  yield takeLatest(
+  yield* takeLatest(
     CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START,
     fetchCategoriesAsync
   );
@@ -26,5 +25,5 @@ export function* onFetchCategories() {
 }
 
 export function* categoriesSaga() {
-  yield all([call(onFetchCategories)]); // all means run everything inside and only complete when all of it is done
+  yield* all([call(onFetchCategories)]); // all means run everything inside and only complete when all of it is done
 }
