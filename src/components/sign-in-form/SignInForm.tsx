@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Button, FormInput } from "../ui";
 import "./sign-in.styles.scss";
 import { BUTTON_TYPE_CLASSES } from "../ui/Button/Button";
@@ -18,7 +18,7 @@ const SignInForm = () => {
     defaultInformationField
   );
   const { email, password } = informationUser;
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setInformationUser({ ...informationUser, [name]: value });
   };
@@ -26,20 +26,13 @@ const SignInForm = () => {
     dispatch(googleSignInStart());
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       dispatch(emailSignInStart(email, password));
       setInformationUser(defaultInformationField);
     } catch (error) {
-      switch (error.code) {
-        case "auth/wrong-password":
-          return alert("Incorrect password or email");
-        case "auth/user-not-found":
-          return alert("Incorrect email or password");
-        default:
-          console.log(error);
-      }
+      console.log("User failed to sign in", error);
     }
   };
 
