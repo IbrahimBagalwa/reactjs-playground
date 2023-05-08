@@ -80,7 +80,7 @@ export type AdditionalInfo = {
 
 export type UserData = {
   createdAt: Date;
-  dysolayName: string;
+  displayName: string;
   email: string;
 };
 export const createUserDocumentFromAuth = async (
