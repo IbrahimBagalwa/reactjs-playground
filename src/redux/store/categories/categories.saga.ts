@@ -16,6 +16,7 @@ export function* fetchCategoriesAsync() {
     yield* put(fetchCategoriesFailed(error as Error));
   }
 }
+
 export function* onFetchCategories() {
   yield* takeLatest(
     CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START,
@@ -25,5 +26,6 @@ export function* onFetchCategories() {
 }
 
 export function* categoriesSaga() {
-  yield* all([call(onFetchCategories)]); // all means run everything inside and only complete when all of it is done
+  yield* all([call(onFetchCategories)]);
+  // all means run everything inside and only complete when all of it is done
 }
