@@ -1,4 +1,4 @@
-import { takeLatest, call, all, put } from "typed-redux-saga/macro";
+import { takeLatest, call, all, put } from "typed-redux-saga";
 import { CATEGORIES_ACTION_TYPES } from "./categories.types";
 import {
   fetchCategoriesFailed,
