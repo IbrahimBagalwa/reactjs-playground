@@ -9,8 +9,14 @@ import {
 } from "../../redux/store/categories/categories.selector";
 import Spinner from "../../components/spinner/Spinner";
 
+type CategoryRouteParams = {
+  category: string;
+};
 const Category = () => {
-  const { category } = useParams();
+  const { category } = useParams<
+    keyof CategoryRouteParams
+  >() as CategoryRouteParams;
+
   const categoriesArray = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectCategoriesIsLoading);
   return (
