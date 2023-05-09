@@ -27,6 +27,6 @@ export const categories = [
     id: 5,
     title: "mens",
     imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-    route: "/shop/men",
+    route: "/shop/mens",
   },
 ];
