@@ -1,15 +1,21 @@
+import { FC } from "react";
+import { CategotyItem } from "../../redux/store/categories/categories.types";
 import ProductCard from "../product-card/Product";
 import {
   CartegoryPreviewContainer,
   Preview,
-  TitleLink,
+  Title,
 } from "./category-preview.style";
 
-const CategoryPreview = ({ title, products }) => {
+type CategoryPreviewProps = {
+  title: string;
+  products: CategotyItem[];
+};
+const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
   return (
     <CartegoryPreviewContainer>
       <h2>
-        <TitleLink>{title.toUpperCase()}</TitleLink>
+        <Title>{title.toUpperCase()}</Title>
       </h2>
       <Preview>
         {products

@@ -3,7 +3,7 @@ import {
   CartDropDownContainer,
   CartItems,
   EmptyMessage,
-} from "./cart-dropdown.style.jsx";
+} from "./cart-dropdown.style.js";
 import { useNavigate } from "react-router-dom";
 import CartItem from "../cart-item/CartItem";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,7 +21,6 @@ const CartDropdown = () => {
     dispatch(setIsCartOpen(false));
   };
 
-  console.log("Cart drop down");
   return (
     <CartDropDownContainer>
       <CartItems>

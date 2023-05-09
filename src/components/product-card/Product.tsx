@@ -4,8 +4,13 @@ import { BUTTON_TYPE_CLASSES } from "../ui/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../../redux/store/cart/cart.action";
 import { selectCartItems } from "../../redux/store/cart/cart.selector";
+import { CartItem } from "../../redux/store/cart/cart.types";
+import { FC } from "react";
 
-const ProductCard = ({ product }) => {
+type ProductProps = {
+  product: CartItem;
+};
+const ProductCard: FC<ProductProps> = ({ product }) => {
   const dispatch = useDispatch();
   const { name, imageUrl, price } = product;
   const cartItems = useSelector(selectCartItems);

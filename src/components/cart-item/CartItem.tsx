@@ -1,5 +1,11 @@
+import { FC } from "react";
+import { CartItem as ITCartItem } from "../../redux/store/cart/cart.types";
 import { CartItemContainer, Name, ItemDetails } from "./cart-item.style";
-const CartItem = ({ cartItem }) => {
+
+export type CartItemProps = {
+  cartItem: ITCartItem;
+};
+const CartItem: FC<CartItemProps> = ({ cartItem }) => {
   const { name, imageUrl, quantity, price } = cartItem;
   return (
     <CartItemContainer>

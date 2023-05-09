@@ -14,8 +14,12 @@ import {
   RemoveButton,
   Value,
 } from "./checkout-item.style";
-
-const CheckoutItem = ({ cartItems }) => {
+import { CartItem } from "../../../redux/store/cart/cart.types";
+import { FC } from "react";
+type CheckoutItemProps = {
+  cartItems: CartItem;
+};
+const CheckoutItem: FC<CheckoutItemProps> = ({ cartItems }) => {
   const { imageUrl, name, quantity, price } = cartItems;
   const dispatch = useDispatch();
   const cartItemsSelctor = useSelector(selectCartItems);
