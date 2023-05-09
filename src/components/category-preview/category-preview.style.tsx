@@ -1,3 +1,4 @@
+import { RefAttributes } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -6,6 +7,7 @@ export const CartegoryPreviewContainer = styled.div`
   flex-direction: column;
   margin-bottom: 30px;
 `;
+
 export const Title = styled(Link)`
   font-size: 28px;
   margin-bottom: 25px;
