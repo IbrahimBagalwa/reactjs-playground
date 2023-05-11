@@ -3,19 +3,43 @@ import { useParams } from "react-router-dom";
 
 import ProductCard from "../../components/product-card/product-card.component";
 
-import { CategoriesContext } from "../../contexts/categories.context";
+// import { CategoriesContext } from "../../contexts/categories.context";
 
 import { CategoryContainer, Title } from "./category.styles";
 import Spinner from "../../components/spinner/spinner.component";
+import { useQuery, gql } from "@apollo/client";
 
+const GETCATEGORY = gql`
+  query ($title: String!) {
+    getCollectionsByTitle(title: $title) {
+      id
+      title
+      items {
+        id
+        name
+        price
+        imageUrl
+      }
+    }
+  }
+`;
 const Category = () => {
   const { category } = useParams();
-  const { categoriesMap, loading } = useContext(CategoriesContext);
-  const [products, setProducts] = useState(categoriesMap[category]);
+  const { loading, error, data } = useQuery(GETCATEGORY, {
+    variables: {
+      title: category,
+    },
+  });
 
+  const [products, setProducts] = useState([]);
   useEffect(() => {
-    setProducts(categoriesMap[category]);
-  }, [category, categoriesMap]);
+    if (data) {
+      const {
+        getCollectionsByTitle: { items },
+      } = data;
+      setProducts(items);
+    }
+  }, [category, data]);
 
   return (
     <Fragment>
