@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { CartItem as ITCartItem } from "../../redux/store/cart/cart.types";
 import { CartItemContainer, Name, ItemDetails } from "./cart-item.style";
 
 export type CartItemProps = {
   cartItem: ITCartItem;
 };
-const CartItem: FC<CartItemProps> = ({ cartItem }) => {
+const CartItem: FC<CartItemProps> = memo(({ cartItem }) => {
   const { name, imageUrl, quantity, price } = cartItem;
   return (
     <CartItemContainer>
@@ -18,6 +18,6 @@ const CartItem: FC<CartItemProps> = ({ cartItem }) => {
       </ItemDetails>
     </CartItemContainer>
   );
-};
+});
 
 export default CartItem;
