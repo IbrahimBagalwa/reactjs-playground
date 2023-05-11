@@ -1,10 +1,6 @@
-import { useContext, useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { useParams } from "react-router-dom";
-
 import ProductCard from "../../components/product-card/product-card.component";
-
-// import { CategoriesContext } from "../../contexts/categories.context";
-
 import { CategoryContainer, Title } from "./category.styles";
 import Spinner from "../../components/spinner/spinner.component";
 import { useQuery, gql } from "@apollo/client";
@@ -23,6 +19,7 @@ const GETCATEGORY = gql`
     }
   }
 `;
+
 const Category = () => {
   const { category } = useParams();
   const { loading, error, data } = useQuery(GETCATEGORY, {
