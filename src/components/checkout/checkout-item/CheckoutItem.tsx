@@ -15,11 +15,12 @@ import {
   Value,
 } from "./checkout-item.style";
 import { CartItem } from "../../../redux/store/cart/cart.types";
-import { FC } from "react";
+import { FC, memo } from "react";
+
 type CheckoutItemProps = {
   cartItems: CartItem;
 };
-const CheckoutItem: FC<CheckoutItemProps> = ({ cartItems }) => {
+const CheckoutItem: FC<CheckoutItemProps> = memo(({ cartItems }) => {
   const { imageUrl, name, quantity, price } = cartItems;
   const dispatch = useDispatch();
   const cartItemsSelctor = useSelector(selectCartItems);
@@ -46,6 +47,6 @@ const CheckoutItem: FC<CheckoutItemProps> = ({ cartItems }) => {
       <RemoveButton onClick={clearItemHandler}>&#10005;</RemoveButton>
     </CheckoutItemContainer>
   );
-};
+});
 
 export default CheckoutItem;
