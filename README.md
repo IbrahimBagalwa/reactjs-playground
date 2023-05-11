@@ -1,126 +1,70 @@
-# Reactjs playground
+# Getting Started with Create React App
 
-<a name="readme-top"></a>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+## Available Scripts
 
-<br />
-<div align="center">
-  <a href="https://github.com/IbrahimBagalwa/reactjs-playground">
-  </a>
+In the project directory, you can run:
 
-  <h3 align="center">Reactjs playground</h3>
+### `npm start`
 
-  <p align="center">
-    This repository contains a collection of exercises for learning ReactJS. Each exercise is designed to help you improve your ReactJS skills by building small projects and practicing different concepts and techniques.
-    <br />
-    <a href="https://github.com/IbrahimBagalwa/reactjs-playground"><strong>Explore the projects »</strong></a>
-    <br />
-    <a href="https://github.com/IbrahimBagalwa/reactjs-playground/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/IbrahimBagalwa/reactjs-playground/issues">Request Feature</a>
-  </p>
-</div>
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Repo</a>
-      <ul>
-        <li><a href="#built-with">Intallation</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Exercises</a></li>
-      </ul>
-    </li>
-    <li><a href="#contributing">Contributing</a></li>
-  </ol>
-</details>
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-<!-- ABOUT THE PROJECT -->
+### `npm test`
 
-## About The Repo
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-This repository contains a collection of exercises for learning ReactJS. Each exercise is designed to help you improve your ReactJS skills by building small projects and practicing different concepts and techniques.
+### `npm run build`
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-<!-- GETTING STARTED -->
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Getting Started
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-To get started, navigate to the exercise directory that you want to work on and run the following command:
+### `npm run eject`
 
-- pnpm
-  ```sh
-  pnpm install -g
-  ```
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-```bash
-    pnpm dev
-```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-This will start the development server and open the exercise in your default browser. You can then begin making changes to the code
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Installation
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Before you begin, you'll need to make sure that you have Node.js and npm installed on your machine. You can download the latest version of Node.js from the official website: https://nodejs.org
+## Learn More
 
-Once you have Node.js installed, you can clone this repository and install the dependencies:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-```bash
-git clone https://github.com/IbrahimBagalwa/reactjs-playground.git
-cd reactjs-playground
-pnpm install
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Code Splitting
 
-<!-- CONTRIBUTING -->
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## Contributing
+### Analyzing the Bundle Size
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+### Making a Progressive Web App
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b ft/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin ft/AmazingFeature`)
-5. Open a Pull Request
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Advanced Configuration
 
-[contributors-shield]: https://img.shields.io/github/contributors/IbrahimBagalwa/reactjs-playground.svg?style=for-the-badge
-[contributors-url]: https://github.com/IbrahimBagalwa/reactjs-playground/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/IbrahimBagalwa/reactjs-playground.svg?style=for-the-badge
-[forks-url]: https://github.com/IbrahimBagalwa/reactjs-playground/network/members
-[stars-shield]: https://img.shields.io/github/stars/IbrahimBagalwa/reactjs-playground.svg?style=for-the-badge
-[stars-url]: https://github.com/IbrahimBagalwa/reactjs-playground/stargazers
-[issues-shield]: https://img.shields.io/github/issues/IbrahimBagalwa/reactjs-playground.svg?style=for-the-badge
-[issues-url]: https://github.com/IbrahimBagalwa/reactjs-playground/issues
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-## Author
+### Deployment
 
-- Twitter - [@ibrahim_Bagalwa](https://twitter.com/ibrahim_Bagalwa)
-- LinkedIn - [ibrahim-bagalwa](https://www.linkedin.com/in/IbrahimBagalwa)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## Connect Us:
+### `npm run build` fails to minify
 
-<p align="left">
-
-[![Follow on Twitter](https://img.shields.io/badge/--twitter?label=Twitter&logo=Twitter&style=social)](https://twitter.com/ibrahim_Bagalwa) [![Connect on LinkedIn](https://img.shields.io/badge/--linkedin?label=LinkedIn&logo=LinkedIn&style=social)](https://www.linkedin.com/in/IbrahimBagalwa) [![Send me email](https://img.shields.io/badge/--gmail?label=Gmail&logo=Gmail&style=social)](mailto:bagmurhulaibrahim@gmail.com) [![Send me whatsapp message ](https://img.shields.io/badge/--whatsapp?label=Whatsapp&logo=Whatsapp&style=social)](+243971004914)
-
----
-
-</p>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
