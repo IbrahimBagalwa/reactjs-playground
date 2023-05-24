@@ -8,16 +8,16 @@ module.exports = {
   start_url: "/", // The start URL of your app
   icons: [
     {
-      src: "./favicon.ico",
+      src: "favicon.ico",
       sizes: [96, 128, 192, 256, 384, 512],
     },
     {
-      src: "./crwn-512x512.png",
+      src: "crwn-512x512.png",
       sizes: [512],
       type: "image/png",
     },
     {
-      src: "./crwn-16x16.png",
+      src: "crwn-16x16.png",
       sizes: [192],
       type: "image/png",
     },
