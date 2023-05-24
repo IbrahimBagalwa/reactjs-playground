@@ -9,7 +9,7 @@ const Authentication = lazy(() => import("./routes/auth/Authentication"));
 const Shop = lazy(() => import("./routes/shop/Shop"));
 const Checkout = lazy(() => import("./components/checkout/Checkout"));
 const Navigation = lazy(() => import("./routes/navigation/Navigation"));
-
+import { GlobalStyle } from "./global.style";
 const App = () => {
   const dispatch = useDispatch();
 
@@ -19,6 +19,7 @@ const App = () => {
 
   return (
     <Suspense fallback={<Spinner />}>
+      <GlobalStyle />
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
